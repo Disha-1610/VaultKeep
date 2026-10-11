@@ -1,0 +1,12 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: vaultkeeper-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - vaultkeeper-data:/data/db
+    restart: unless-stopped
+
+volumes:
+  vaultkeeper-data:
